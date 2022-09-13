@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="/public/build/tailwind.css" />
+</head>
+<body>
+    <div class="bg-stone-50 min-h-screen w-screen">
+        <!--app bar-->
+        <div class="h-12 bg-stone-100 flex justify-center items-center">
+            <h2 class="text-stone-700 text-xl font-bold">Inventory App using tailwind & js</h2>
+        </div>
+        <!--app content-->
+        <div class="container max-w-screen-sm mx-auto p-4 ">
+            <!--category section-->
+            <div>
+                <h2 class="font-bold p-2 text-stone-700">Add New Category</h2>
+                <form class="bg-stone-100 flex flex-col rounded-xl p-4 gap-y-4">
+                    <div>
+                        <label class="block text-stone-500 font-bold mb-2">Category title</label>
+                        <input type="text" name="category-title" id="category-title" placeholder="title" class="rounded-xl bg-transparent border border-stone-500 p-2">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-stone-500 mb-2">Category description</label>
+                        <textarea type="text" name="category-description" id="category-description" class="rounded-xl p-2 w-full bg-transparent border border-stone-500 "></textarea>
+                    </div>
+                    <div class="flex justify-between item-center gap-x-4">
+                        <button class="border border-stone-500 flex-1 rounded-xl py-2 text-stone-600 font-bold">Cancel</button>
+                        <button class="flex-1 bg-orange-500 rounded-xl py-2 text-stone-600 font-bold">Add Category</button>
+                    </div>
+                </form>
+            </div>
+            <!--product section-->
+            <div>
+                <h2 class="font-bold p-2 text-stone-700">Add New Product</h2>
+                <form class="bg-stone-100 flex flex-col rounded-xl p-4 gap-y-4">
+                    <div>
+                        <label class="block text-stone-500 font-bold mb-2">Product title</label>
+                        <input type="text" name="product-title" id="product-title" class="rounded-xl bg-transparent border border-stone-500 p-2">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-stone-500 mb-2">quantity</label>
+                        <input type="number" name="product-quantity" id="product-quantity" class="rounded-xl p-2 bg-transparent border border-stone-500 ">
+                    </div>
+                    <div>
+                        <select class="w-full bg-transparent border border-stone-500 rounded-xl p-2" name="product-category" id="product-category">
+                           <!-- <option class="bg-stone-100">back end</option>-->
+                        </select>
+                    </div>
+                    <div class="flex justify-between item-center gap-x-4">
+                        <button class="flex-1 bg-orange-500 rounded-xl py-2 text-stone-600 font-bold" id="add-product">Add Product</button>
+                    </div>
+                </form>
+            </div>
+            <!--product list-->
+            <h2 class="font-bold p-2 text-stone-700">Product List</h2>
+            <div class="flex justify-between item-center p-2">
+                <label class="text-stone-500 text-sm font-bold mb-2">search</label>
+                <input type="search" name="search" id="search" class="rounded-xl p-1 bg-transparent border border-stone-500">
+            </div>
+            <div class="flex justify-between item-center p-2">
+                <label class="text-stone-500 text-sm font-bold mb-2">sort</label>
+                <select name="sort-select" id="sort-select" class="rounded-xl bg-transparent border border-stone-500 px-1">
+                    <option class='bg-stone-500' value="newest">newest</option>
+                    <option class='bg-stone-500' value="oldest">oldest</option>
+                </select>
+            </div>
+            <!-- <div id="product-list" class="flex justify-between p-2">
+                <span class="text-stone-500 text-sm">react.js</span>
+                <div class="felx gap-x-3">
+                    <span class="text-stone-500 text-sm">401/6/21</span>
+                    <span class="text-stone-500 text-sm border border-stone-500 rounded-xl px-2 py-0.5">back end</span>
+                    <span class="text-stone-500 text-sm border border-stone-500 px-1 py-0.5  rounded-xl">10</span>
+                    <button class="text-orange-500 text-sm border border-orange-500 rounded-xl px-2 py-0.5">delete</button>
+                </div>
+            </div> -->
+            <div id="product-list"></div>
+        </div>
+    </div>
+
+    <script src="/src/js/app.js" type="module"></script>
+</body>
+</html>
